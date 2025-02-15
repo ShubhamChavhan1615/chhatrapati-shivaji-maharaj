@@ -1,0 +1,149 @@
+// import React from 'react'
+// import Header from './components/Header'
+// import VijayMap from './components/VijayMap'
+
+// const App = () => {
+//   return (
+//     <div className="bg-white text-gray-900 dark:bg-gray-900 dark:text-white min-h-screen transition-colors duration-300">
+//       <Header />
+//       <VijayMap/>
+//     </div>
+//   )
+// }
+
+// export default App
+
+// import { motion, AnimatePresence } from "framer-motion";
+// import { useState } from "react";
+
+// const kille = [
+//   { 
+//     name: "रायगड", 
+//     year: 1674, 
+//     description: "रायगड किल्ला म्हणजे स्वराज्याचे तेजस्वी प्रतीक. १६७४ मध्ये छत्रपती शिवाजी महाराजांचा राज्याभिषेक येथे पार पडला.",
+//     image: "/images/raigad.jpg",
+//     x: "30%", y: "50%"
+//   },
+//   { 
+//     name: "प्रतापगड", 
+//     year: 1659, 
+//     description: "प्रतापगड हा मराठा साम्राज्याच्या विजयाचा साक्षीदार आहे. येथे १६५९ मध्ये शिवाजी महाराज आणि अफजलखान यांच्यातील ऐतिहासिक युद्ध झाले.",
+//     image: "/images/pratapgad.jpg",
+//     x: "40%", y: "60%"
+//   },
+//   { 
+//     name: "सिंहगड", 
+//     year: 1670, 
+//     description: "तानाजी मालुसरेंच्या वीरतेची साक्ष असलेला हा किल्ला १६७० मध्ये मराठ्यांनी परत जिंकला. ‘गड आला पण सिंह गेला’ ही कहाणी इथेच घडली.",
+//     image: "/images/sinhagad.jpg",
+//     x: "50%", y: "40%"
+//   },
+//   { 
+//     name: "राजगड", 
+//     year: 1647, 
+//     description: "राजगड हा छत्रपती शिवाजी महाराजांचे पहिले राजधानीचे ठिकाण. जवळपास २५ वर्षे महाराजांनी येथे आपले राज्य चालवले.",
+//     image: "/images/rajgad.jpg",
+//     x: "60%", y: "30%"
+//   },
+//   { 
+//     name: "तोरणा", 
+//     year: 1646, 
+//     description: "छत्रपती शिवाजी महाराजांनी अवघ्या १६ व्या वर्षी जिंकलेला किल्ला म्हणजे तोरणा. येथे त्यांच्या स्वराज्य स्थापनेची सुरुवात झाली.",
+//     image: "/images/torna.jpg",
+//     x: "70%", y: "50%"
+//   },
+//   { 
+//     name: "लोहगड", 
+//     year: 1648, 
+//     description: "लोहगड किल्ला हा मराठा साम्राज्याच्या सामर्थ्याचे प्रतीक आहे. १६४८ मध्ये शिवाजी महाराजांनी हा किल्ला जिंकला.",
+//     image: "/images/lohagad.jpg",
+//     x: "80%", y: "40%"
+//   },
+//   { 
+//     name: "विसापूर", 
+//     year: 1650, 
+//     description: "विसापूर किल्ला हा लोहगड किल्ल्याच्या जवळ आहे. १६५० मध्ये शिवाजी महाराजांनी हा किल्ला जिंकला.",
+//     image: "/images/visapur.jpg",
+//     x: "90%", y: "60%"
+//   },
+// ];
+
+// export default function VijayMap() {
+//   const [selectedKilla, setSelectedKilla] = useState(null);
+//   const [position, setPosition] = useState({ x: "50%", y: "50%" });
+
+//   return (
+//     <div className="relative w-full h-[800px] bg-[url('/images/maharashtra-map.jpg')] bg-cover bg-center bg-no-repeat dark:bg-gray-800 transition-all duration-500 overflow-hidden">
+      
+//       {/* Fort Markers */}
+//       {kille.map((killa, index) => (
+//         <motion.div
+//           key={index}
+//           className="absolute w-6 h-6 bg-transparent cursor-pointer"
+//           style={{ top: killa.y, left: killa.x }}
+//           onMouseEnter={(e) => {
+//             setSelectedKilla(killa);
+//             setPosition({ x: e.clientX, y: e.clientY });
+//           }}
+//           onMouseLeave={() => setSelectedKilla(null)}
+//         >
+//           <motion.div
+//             className="w-full h-full bg-orange-500 dark:bg-orange-600 rounded-full border-2 border-white dark:border-gray-300 shadow-md"
+//             whileHover={{ scale: 1.5, rotate: 360 }}
+//             transition={{ duration: 0.5 }}
+//           />
+//         </motion.div>
+//       ))}
+
+//       {/* Floating Fort Details Card */}
+//       <AnimatePresence>
+//         {selectedKilla && (
+//           <motion.div
+//             className="absolute bg-white dark:bg-gray-900 text-black dark:text-white rounded-lg shadow-xl p-6 w-80 z-50"
+//             style={{
+//               top: `calc(${position.y}px + 20px)`, 
+//               left: `calc(${position.x}px + 20px)`,
+//             }}
+//             initial={{ opacity: 0, y: -20 }}
+//             animate={{ opacity: 1, y: 0 }}
+//             exit={{ opacity: 0, y: -20 }}
+//             transition={{ duration: 0.3 }}
+//           >
+//             <motion.img 
+//               src={selectedKilla.image} 
+//               alt={selectedKilla.name} 
+//               className="w-full h-40 object-cover rounded-md shadow-md" 
+//               initial={{ scale: 0.9 }}
+//               animate={{ scale: 1 }}
+//               transition={{ duration: 0.3 }}
+//             />
+//             <h2 className="text-xl font-bold mt-3">{selectedKilla.name} ({selectedKilla.year})</h2>
+//             <p className="mt-2 text-sm">{selectedKilla.description}</p>
+//           </motion.div>
+//         )}
+//       </AnimatePresence>
+//     </div>
+//   );
+// }
+
+
+// import { motion } from "framer-motion";
+
+// export default function Header() {
+//   return (
+//     <motion.header
+//       className="text-center py-12 bg-gradient-to-r from-orange-600 to-red-700 dark:from-orange-800 dark:to-red-900 text-white shadow-2xl"
+//       initial={{ opacity: 0, y: -50 }}
+//       animate={{ opacity: 1, y: 0 }}
+//       transition={{ duration: 1 }}
+//     >
+//       <h1 className="text-6xl font-extrabold drop-shadow-lg tracking-wide">
+//         🏰 छत्रपती शिवरायांचा विजय नकाशा
+//       </h1>
+//       <div className="w-40 mx-auto mt-3 border-b-4 border-yellow-400 dark:border-yellow-500"></div>
+//       <p className="mt-4 text-xl italic font-semibold text-gray-200 dark:text-gray-300">
+//         "स्वराज्य हा माझा जन्मसिद्ध हक्क आहे!"
+//       </p>
+//     </motion.header>
+//   );
+// }
