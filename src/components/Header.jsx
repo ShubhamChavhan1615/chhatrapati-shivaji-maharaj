@@ -11,7 +11,7 @@ const Header = () => {
       transition={{ duration: 1 }}
     >
       <h1 className="text-6xl font-extrabold drop-shadow-lg tracking-wide">
-        🏰 छत्रपती शिवरायांचा विजय नकाशा
+         छत्रपती शिवरायांचा विजय नकाशा
       </h1>
       <div className="w-40 mx-auto mt-3 border-b-4 border-yellow-400 dark:border-yellow-500"></div>
       <p className="mt-4 text-xl italic font-semibold text-gray-200 dark:text-gray-300">
