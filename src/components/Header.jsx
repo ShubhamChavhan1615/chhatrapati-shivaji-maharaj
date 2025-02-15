@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 
 const Header = () => {
   return (
+    //main Header 
     <motion.header
       className="text-center relative z-50 py-12 bg-gradient-to-r from-orange-600 to-red-700 dark:from-orange-800 dark:to-red-900 text-white shadow-2xl"
       initial={{ opacity: 0, y: -50 }}
