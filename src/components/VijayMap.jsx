@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { kille } from './fortsData'
 
+
 const VijayMap = () => {
   const [selectedFort, setSelectedFort] = useState(null)
   const [hoveredFort, setHoveredFort] = useState(null)
@@ -100,34 +101,20 @@ const VijayMap = () => {
                   className="relative h-56 overflow-hidden"
                   whileHover={{ scale: 1.1 }}
                 >
-                  {/* <motion.img
+                  <motion.img
                     src={fort.image}
                     alt={fort.name}
-                    className="w-full h-full object-cover"
-                    initial={{ scale: 1.2 }}
+                    className="w-full h-full object-cover drop-shadow-[0_0_15px_rgba(255,255,255,0.7)]"
+                    initial={{ scale: 1.2, filter: "brightness(1.3) contrast(1.2)" }}
                     style={{
-                      objectPosition: 'center',
-                      imageRendering: 'crisp-edges',
-                      backfaceVisibility: 'hidden',
-                      WebkitBackfaceVisibility: 'hidden'
+                      objectPosition: "center",
+                      imageRendering: "crisp-edges",
+                      backfaceVisibility: "hidden",
+                      WebkitBackfaceVisibility: "hidden"
                     }}
-                    animate={{ scale: hoveredFort === fort ? 1.3 : 1.2 }}
+                    animate={{ scale: 1.25 }}
                     transition={{ duration: 0.4 }}
-                  /> */}
-                  <motion.img
-  src={fort.image}
-  alt={fort.name}
-  className="w-full h-full object-cover drop-shadow-[0_0_15px_rgba(255,255,255,0.7)]"
-  initial={{ scale: 1.2, filter: "brightness(1.3) contrast(1.2)" }}
-  style={{
-    objectPosition: "center",
-    imageRendering: "crisp-edges",
-    backfaceVisibility: "hidden",
-    WebkitBackfaceVisibility: "hidden"
-  }}
-  animate={{ scale: 1.25 }}
-  transition={{ duration: 0.4 }}
-/>
+                  />
 
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                 </motion.div>
@@ -149,7 +136,7 @@ const VijayMap = () => {
         <AnimatePresence>
           {selectedFort && (
             <motion.div
-              className="fixed inset-0 bg-black/90 backdrop-blur-sm flex items-center justify-center z-50"
+              className="fixed inset-0 bg-black/90 backdrop-blur-sm flex items-center justify-center z-[200]"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -163,88 +150,44 @@ const VijayMap = () => {
                 transition={{ type: "spring", damping: 20 }}
                 onClick={e => e.stopPropagation()}
               >
-                {/* <motion.img 
-                  src={selectedFort.image} 
-                  alt={selectedFort.name}
-                  className="w-full h-80 object-cover rounded-xl mb-6 shadow-lg"
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.2 }}
-                /> */}
-                {/* <motion.img
+                <motion.img
                   src={selectedFort.image}
                   alt={selectedFort.name}
                   className="w-full h-80 object-cover rounded-xl mb-6 shadow-lg
-           transform hover:scale-105 transition-transform duration-300
-           filter contrast-110 brightness-105 saturate-110"
+             transform transition-transform duration-300
+             drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]
+             contrast-125 brightness-110 saturate-125"
                   style={{
-                    objectPosition: 'center',
-                    imageRendering: 'crisp-edges',
-                    backfaceVisibility: 'hidden',
-                    WebkitBackfaceVisibility: 'hidden'
+                    objectPosition: "center",
+                    imageRendering: "crisp-edges",
+                    backfaceVisibility: "hidden",
+                    WebkitBackfaceVisibility: "hidden"
                   }}
-                  initial={{ y: 20, opacity: 0, scale: 0.95 }}
+                  initial={{ y: 20, opacity: 0, scale: 0.95, filter: "brightness(100%) contrast(100%)" }}
                   animate={{
                     y: 0,
                     opacity: 1,
                     scale: 1,
                     filter: [
-                      'brightness(100%) contrast(100%)',
-                      'brightness(110%) contrast(110%)',
-                      'brightness(100%) contrast(100%)'
+                      "brightness(110%) contrast(115%)",
+                      "brightness(120%) contrast(120%)",
+                      "brightness(110%) contrast(115%)"
                     ]
                   }}
                   transition={{
                     duration: 0.6,
                     filter: {
-                      duration: 2,
+                      duration: 2.5,
                       repeat: Infinity,
                       repeatType: "reverse"
                     }
                   }}
                   whileHover={{
-                    scale: 1.05,
+                    scale: 1.08,
+                    filter: "brightness(130%) contrast(130%) saturate(140%)",
                     transition: { duration: 0.3 }
                   }}
-                /> */}
-                <motion.img
-  src={selectedFort.image}
-  alt={selectedFort.name}
-  className="w-full h-80 object-cover rounded-xl mb-6 shadow-lg
-             transform transition-transform duration-300
-             drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]
-             contrast-125 brightness-110 saturate-125"
-  style={{
-    objectPosition: "center",
-    imageRendering: "crisp-edges",
-    backfaceVisibility: "hidden",
-    WebkitBackfaceVisibility: "hidden"
-  }}
-  initial={{ y: 20, opacity: 0, scale: 0.95, filter: "brightness(100%) contrast(100%)" }}
-  animate={{
-    y: 0,
-    opacity: 1,
-    scale: 1,
-    filter: [
-      "brightness(110%) contrast(115%)",
-      "brightness(120%) contrast(120%)",
-      "brightness(110%) contrast(115%)"
-    ]
-  }}
-  transition={{
-    duration: 0.6,
-    filter: {
-      duration: 2.5,
-      repeat: Infinity,
-      repeatType: "reverse"
-    }
-  }}
-  whileHover={{
-    scale: 1.08,
-    filter: "brightness(130%) contrast(130%) saturate(140%)",
-    transition: { duration: 0.3 }
-  }}
-/>
+                />
 
                 <motion.div
                   initial={{ y: 20, opacity: 0 }}

@@ -5,7 +5,7 @@ const Header = () => {
   return (
     //main Header 
     <motion.header
-      className="text-center relative z-50 py-12 bg-gradient-to-r from-orange-600 to-red-700 dark:from-orange-800 dark:to-red-900 text-white shadow-2xl"
+      className="text-center relative z-10 py-12 bg-gradient-to-r from-orange-600 to-red-700 dark:from-orange-800 dark:to-red-900 text-white shadow-2xl"
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
