@@ -45,7 +45,7 @@ const VijayMap = () => {
         }}
         style={{
           backgroundImage: "url('https://images.unsplash.com/photo-1621804298968-5fc664947fd2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHNoaXZhamklMjBtYWhhcmFqfGVufDB8fDB8fHww')",
-          filter: "brightness(0.7)"
+          filter: "brightness(0.9)"
         }}
       />
 
@@ -84,7 +84,7 @@ const VijayMap = () => {
         >
           {kille.map((fort, index) => (
             <motion.div
-              key={fort.name}
+              key={index}
               variants={fortCardVariants}
               whileHover={{
                 scale: 1.05,
@@ -100,14 +100,35 @@ const VijayMap = () => {
                   className="relative h-56 overflow-hidden"
                   whileHover={{ scale: 1.1 }}
                 >
-                  <motion.img
+                  {/* <motion.img
                     src={fort.image}
                     alt={fort.name}
                     className="w-full h-full object-cover"
                     initial={{ scale: 1.2 }}
+                    style={{
+                      objectPosition: 'center',
+                      imageRendering: 'crisp-edges',
+                      backfaceVisibility: 'hidden',
+                      WebkitBackfaceVisibility: 'hidden'
+                    }}
                     animate={{ scale: hoveredFort === fort ? 1.3 : 1.2 }}
                     transition={{ duration: 0.4 }}
-                  />
+                  /> */}
+                  <motion.img
+  src={fort.image}
+  alt={fort.name}
+  className="w-full h-full object-cover drop-shadow-[0_0_15px_rgba(255,255,255,0.7)]"
+  initial={{ scale: 1.2, filter: "brightness(1.3) contrast(1.2)" }}
+  style={{
+    objectPosition: "center",
+    imageRendering: "crisp-edges",
+    backfaceVisibility: "hidden",
+    WebkitBackfaceVisibility: "hidden"
+  }}
+  animate={{ scale: 1.25 }}
+  transition={{ duration: 0.4 }}
+/>
+
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                 </motion.div>
                 <motion.div
@@ -150,7 +171,7 @@ const VijayMap = () => {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.2 }}
                 /> */}
-                <motion.img
+                {/* <motion.img
                   src={selectedFort.image}
                   alt={selectedFort.name}
                   className="w-full h-80 object-cover rounded-xl mb-6 shadow-lg
@@ -185,7 +206,46 @@ const VijayMap = () => {
                     scale: 1.05,
                     transition: { duration: 0.3 }
                   }}
-                />
+                /> */}
+                <motion.img
+  src={selectedFort.image}
+  alt={selectedFort.name}
+  className="w-full h-80 object-cover rounded-xl mb-6 shadow-lg
+             transform transition-transform duration-300
+             drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]
+             contrast-125 brightness-110 saturate-125"
+  style={{
+    objectPosition: "center",
+    imageRendering: "crisp-edges",
+    backfaceVisibility: "hidden",
+    WebkitBackfaceVisibility: "hidden"
+  }}
+  initial={{ y: 20, opacity: 0, scale: 0.95, filter: "brightness(100%) contrast(100%)" }}
+  animate={{
+    y: 0,
+    opacity: 1,
+    scale: 1,
+    filter: [
+      "brightness(110%) contrast(115%)",
+      "brightness(120%) contrast(120%)",
+      "brightness(110%) contrast(115%)"
+    ]
+  }}
+  transition={{
+    duration: 0.6,
+    filter: {
+      duration: 2.5,
+      repeat: Infinity,
+      repeatType: "reverse"
+    }
+  }}
+  whileHover={{
+    scale: 1.08,
+    filter: "brightness(130%) contrast(130%) saturate(140%)",
+    transition: { duration: 0.3 }
+  }}
+/>
+
                 <motion.div
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
