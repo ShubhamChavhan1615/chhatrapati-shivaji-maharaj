@@ -14,14 +14,13 @@ const App = () => {
     >
       <Header />
       <VijayMap />
-      <Summary/>\
+      <Summary/>
       <Footer />
     </motion.div>
   )
 }
 
 export default App
-
 
 const Footer = () => (
   <footer className="mt-10 py-4 text-center text-sm text-gray-400 z-5 relative">
