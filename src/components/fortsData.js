@@ -109,4 +109,59 @@ export const kille = [
     y: "30%",
     location: [18.234, 73.432],
   },
+  {
+    name: "सज्जनगड",
+    year: 1673,
+    description:
+      "धार्मिक आणि ऐतिहासिकदृष्ट्या महत्त्वाचा किल्ला. हा किल्ला शिवाजी महाराजांनी समर्थ रामदास स्वामींना दिला होता. येथे आजही समर्थांची समाधी आहे, ज्याला अनेक भक्त भेट देतात.",
+    image:
+      "https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcRfqR4q2PyU4QWuBOIKi9O0Z-aHnvrMSZzVfaliE8hmi1kv6PMk_vHS9jYt31H21T2_RrLndJ_3Y1IKP9a-8Qj8THdBm4JLUUVVDbucr4I",
+    x: "40%",
+    y: "60%",
+    location: [17.648, 73.833],
+  },
+  {
+    name: "अंजनवेल",
+    year: 1660,
+    description:
+      "कोंकण किनारपट्टीवरील एक महत्त्वाचा जलदुर्ग. शिवाजी महाराजांनी याचा उपयोग स्वराज्याच्या सागरी संरक्षणासाठी केला होता.",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpL0j-Jcel3XnuALYwu_ri02aZDN2Wg54nDA&s",
+    x: "55%",
+    y: "70%",
+    location: [17.550, 73.121],
+  },
+  {
+    name: "सिंधुदुर्ग",
+    year: 1664,
+    description:
+      "शिवाजी महाराजांनी सागरी संरक्षणासाठी हा भव्य जलदुर्ग बांधला. या किल्ल्यात शिवरायांचे मंदीर असून, समुद्राच्या मधोमध उभा असलेला हा किल्ला मराठा आरमाराचे प्रतीक आहे.",
+    image:
+      "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcS2Pd9gwbUbNqN4NWUVoa0x74Rcd9IzebuEfXQEy0D6afU6w_zkSdVO2y4Y3i31ibyQsHHWHXCvC373bNSf1HNGCz7TRdJJt0suNAwu-w",
+    x: "65%",
+    y: "80%",
+    location: [16.038, 73.463],
+  },
+  {
+    name: "पावनगड",
+    year: 1673,
+    description:
+      "गडहिंग्लज जवळील हा किल्ला पन्हाळ्याच्या संरक्षणासाठी महत्त्वाचा होता. छत्रपती शिवाजी महाराजांनी येथे मोठ्या विजय मिळवला होता.",
+    image:
+      "https://spothunter.in/wp-content/uploads/2022/02/%E0%A4%AA%E0%A4%BE%E0%A4%B5%E0%A4%A8%E0%A4%97%E0%A4%A1-%E0%A4%95%E0%A4%BF%E0%A4%B2%E0%A5%87-%E0%A4%95%E0%A4%BE-%E0%A4%87%E0%A4%A4%E0%A4%BF%E0%A4%B9%E0%A4%BE%E0%A4%B8.jpg",
+    x: "50%",
+    y: "85%",
+    location: [16.826, 74.393],
+  },
+  {
+    name: "अहिवंतगड",
+    year: 1670,
+    description:
+      "साल्हेरच्या लढाईच्या वेळी शिवाजी महाराजांनी हा किल्ला जिंकला. डोंगराळ प्रदेशात वसलेला हा किल्ला रणनीतीच्या दृष्टिकोनातून महत्त्वाचा होता.",
+    image:
+      "https://lh5.googleusercontent.com/p/AF1QipOi1yLTOSwjIaAnRFANGp8RurxpGWVjtnRgam66=w810-h468-n-k-no",
+    x: "35%",
+    y: "40%",
+    location: [20.347, 73.918],
+  },
 ];
